@@ -1,0 +1,27 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      DB_PATH: /app/data/salary.db
+      SEED_ENABLED: "true"
+    ports:
+      - "8080:8080"
+    volumes:
+      - salary-data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://localhost:8080/api/health >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 20s
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  salary-data:
