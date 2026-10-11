@@ -107,10 +107,5 @@ Make small, meaningful commits as you work rather than one commit at the end. Ex
 6. `build: add Docker Compose deployment`
 7. `docs: add setup and demo instructions`
 
-If this folder is not already a Git repository, run `git init`, then add and commit the files in stages.
 
-## Before submission
-- Run backend tests and frontend build locally.
-- Start the full app and verify search, filters, pagination, salary summary and salary update.
-- Record your own screen demo using `docs/DEMO_SCRIPT.md` (a real recording is not included in this source archive).
-- Review all code and be ready to explain the decisions in `docs/TRADE_OFFS.md`.
+
